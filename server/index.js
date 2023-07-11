@@ -6,15 +6,21 @@ const port = 8080;
 const app = express();
 const cors = require("cors")
 //Connecting server to database
-mongoose
-  .connect("mongodb://localhost/prep45", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("Server is connected to Database");
-  })
-  .catch((e) => console.error(e));
+// mongoose
+//   .connect("mongodb://localhost/prep45", {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true,
+//   })
+//   .then(() => {
+//     console.log("Server is connected to Database");
+//   })
+//   .catch((e) => console.error(e));
+var uri = 'mongodb+srv://kushal:Kushal24@cluster0.q2aawhd.mongodb.net/test';
+mongoose.connect(uri, { useUnifiedTopology: true, useNewUrlParser: true });
+const connection = mongoose.connection;
+connection.once("open", function () {
+  console.log("MongoDB database connection established successfully");
+});
 
 app.use(bodyParser.json());
 app.use(cors())

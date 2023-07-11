@@ -1,7 +1,8 @@
 .App {
   max-width: 500px;
-  margin: 0 auto;
+  margin: 10% auto;
   padding: 20px;
+  background-image: linear-gradient(to bottom right, rgb(250, 244, 244), rgb(122, 175, 245));
 }
 
 input {

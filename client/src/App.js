@@ -64,9 +64,9 @@ function App() {
         />
         <button type="submit">Add Book</button>
       </form>
-      {console.log(books.length)}
+      {/* {console.log(books)} */}
       <ul>
-        {books.length > 0 ? (
+        {books.length >0 ? (
           books.map((book) => (
             <li key={book._id}>
               {book.name} by {book.author}
