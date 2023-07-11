@@ -25,11 +25,10 @@ app.get("/", (req, res) => {
 });
 
 //API To get all Books
-//let books=[]
+
 app.get("/api/books", async (req, res) => {
   try {
     let allBooks = await Book.find();
-    //books.push(allBooks)
     res.json(allBooks);
   } catch (error) {
     res.json({ status: "Unable to fetch Books", message: error.message });
@@ -48,7 +47,7 @@ app.post("/api/books", async (req, res) => {
   }
 });
 
-// // Remove a book
+// Remove a book
 app.delete("/api/books/:id", async (req, res) => {
   try {
     const _id = req.params.id;
@@ -62,6 +61,7 @@ app.delete("/api/books/:id", async (req, res) => {
   }
 });
 
+//Server Is listening 
 app.listen(port, () => {
   console.log("Server is Listening on port 8080");
 });
