@@ -15,7 +15,7 @@ const cors = require("cors")
 //     console.log("Server is connected to Database");
 //   })
 //   .catch((e) => console.error(e));
-var uri = 'mongodb+srv://kushal:Kushal24@cluster0.q2aawhd.mongodb.net/test';
+const uri = 'mongodb+srv://kushal:Kushal24@cluster0.q2aawhd.mongodb.net/test';
 mongoose.connect(uri, { useUnifiedTopology: true, useNewUrlParser: true });
 const connection = mongoose.connection;
 connection.once("open", function () {
